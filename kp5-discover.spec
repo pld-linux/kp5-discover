@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.5.4
+%define		kdeplasmaver	5.11.0
 %define		qtver		5.5.1
 %define		kpname		discover
 Summary:	discover
 Name:		kp5-%{kpname}
-Version:	5.5.4
+Version:	5.11.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	277ad0f67e0b101d109e93a03902bf49
+# Source0-md5:	5cb5de24ee185a7c07c70165b81cd9d2
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -69,37 +69,28 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /sbin/ldconfig
-%postun	-p /sbin/ldconfig
-
 %files -f discover.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/muon-discover
-%attr(755,root,root) %{_bindir}/muon-updater
-%attr(755,root,root) %{_libdir}/libDiscoverCommon.so
-%attr(755,root,root) %{_libdir}/libDiscoverNotifiers.so
+%dir %{_libdir}/qt5/plugins/discover
 %attr(755,root,root) %{_libdir}/qt5/plugins/discover/kns-backend.so
-%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/discover/libdiscoverdeclarativeplugin.so
-%{_libdir}/qt5/qml/org/kde/discover/qmldir
+%dir %{_libdir}/qt5/qml/org/kde/discovernotifier
 %attr(755,root,root) %{_libdir}/qt5/qml/org/kde/discovernotifier/libDiscoverNotifierDeclarativePlugin.so
-%{_libdir}/qt5/qml/org/kde/discovernotifier/qmldir
-%{_desktopdir}/muon-updater.desktop
 %{_desktopdir}/org.kde.discover.desktop
-%{_iconsdir}/hicolor/128x128/apps/muondiscover.png
-%{_iconsdir}/hicolor/16x16/apps/muondiscover.png
-%{_iconsdir}/hicolor/22x22/apps/muondiscover.png
-%{_iconsdir}/hicolor/32x32/apps/muondiscover.png
-%{_iconsdir}/hicolor/48x48/apps/muondiscover.png
-%{_iconsdir}/hicolor/scalable/apps/muondiscover.svgz
-%{_datadir}/knotifications5/muonabstractnotifier.notifyrc
 %{_datadir}/kservices5/plasma-applet-org.kde.discovernotifier.desktop
-%{_datadir}/kxmlgui5/muondiscover/muondiscoverui.rc
-%{_datadir}/kxmlgui5/muonupdater/muonupdaterui.rc
-%{_datadir}/libdiscover/backends/knscomics-backend.desktop
-%{_datadir}/libdiscover/backends/knsplasmoids-backend.desktop
-%{_datadir}/libdiscover/categories/knscomics-backend-categories.xml
-%{_datadir}/libdiscover/categories/knsplasmoids-backend-categories.xml
-%{_datadir}/muondiscover/featured.json
-%{_datadir}/plasma/plasmoids/org.kde.discovernotifier/contents/ui/Full.qml
-%{_datadir}/plasma/plasmoids/org.kde.discovernotifier/contents/ui/main.qml
-%{_datadir}/plasma/plasmoids/org.kde.discovernotifier/metadata.desktop
+%{_datadir}/plasma/plasmoids/org.kde.discovernotifier
+/etc/xdg/discover_ktexteditor_codesnippets_core.knsrc
+%{_libdir}/qt5/qml/org/kde/discovernotifier/qmldir
+%attr(755,root,root) %{_bindir}/plasma-discover
+%{_libdir}/plasma-discover
+%{_desktopdir}/org.kde.discover.urlhandler.desktop
+%{_iconsdir}/hicolor/128x128/apps/plasmadiscover.png
+%{_iconsdir}/hicolor/16x16/apps/plasmadiscover.png
+%{_iconsdir}/hicolor/22x22/apps/plasmadiscover.png
+%{_iconsdir}/hicolor/32x32/apps/plasmadiscover.png
+%{_iconsdir}/hicolor/48x48/apps/plasmadiscover.png
+%{_iconsdir}/hicolor/scalable/apps/plasmadiscover.svgz
+%{_datadir}/knotifications5/discoverabstractnotifier.notifyrc
+%dir %{_datadir}/kxmlgui5/plasmadiscover
+%{_datadir}/kxmlgui5/plasmadiscover/plasmadiscoverui.rc
+%{_datadir}/metainfo/org.kde.discover.appdata.xml
+%{_datadir}/metainfo/org.kde.discovernotifier.appdata.xml
