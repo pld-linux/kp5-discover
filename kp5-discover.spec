@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.15.3
+%define		kdeplasmaver	5.21.2
 %define		qtver		5.9.0
 %define		kpname		discover
 Summary:	discover
 Name:		kp5-%{kpname}
-Version:	5.15.3
+Version:	5.21.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	1ffd8fe39532ef5093e42d4b330de5dd
+# Source0-md5:	8bb849dcab72d29fe48950244e7d1af1
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -57,6 +57,7 @@ install -d build
 cd build
 %cmake -G Ninja \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
+	-DHTML_INSTALL_DIR=%{_kdedocdir} \
 	..
 %ninja_build
 
@@ -73,13 +74,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %dir %{_libdir}/qt5/plugins/discover
 %attr(755,root,root) %{_libdir}/qt5/plugins/discover/kns-backend.so
-%dir %{_libdir}/qt5/qml/org/kde/discovernotifier
-%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/discovernotifier/libDiscoverNotifierDeclarativePlugin.so
 %{_desktopdir}/org.kde.discover.desktop
-%{_datadir}/kservices5/plasma-applet-org.kde.discovernotifier.desktop
-%{_datadir}/plasma/plasmoids/org.kde.discovernotifier
-/etc/xdg/discover_ktexteditor_codesnippets_core.knsrc
-%{_libdir}/qt5/qml/org/kde/discovernotifier/qmldir
+%dir %{_datadir}/knsrcfiles
+%{_datadir}/knsrcfiles/discover_ktexteditor_codesnippets_core.knsrc
 %attr(755,root,root) %{_bindir}/plasma-discover
 %{_libdir}/plasma-discover
 %{_desktopdir}/org.kde.discover.urlhandler.desktop
@@ -89,10 +86,21 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/32x32/apps/plasmadiscover.png
 %{_iconsdir}/hicolor/48x48/apps/plasmadiscover.png
 %{_iconsdir}/hicolor/scalable/apps/plasmadiscover.svgz
-%{_datadir}/knotifications5/discoverabstractnotifier.notifyrc
 %dir %{_datadir}/kxmlgui5/plasmadiscover
 %{_datadir}/kxmlgui5/plasmadiscover/plasmadiscoverui.rc
 %{_datadir}/metainfo/org.kde.discover.appdata.xml
-%{_datadir}/metainfo/org.kde.discovernotifier.appdata.xml
-/etc/xdg/discover.categories
-%{_desktopdir}/org.kde.discover.snap.urlhandler.desktop
+/etc/xdg/autostart/org.kde.discover.notifier.desktop
+%attr(755,root,root) %{_libexecdir}/DiscoverNotifier
+%{_desktopdir}/org.kde.discover.notifier.desktop
+%{_datadir}/knotifications5/discoverabstractnotifier.notifyrc
+%{_datadir}/qlogging-categories5/discover.categories
+%attr(755,root,root) %{_bindir}/plasma-discover-update
+%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_updates.so
+%{_desktopdir}/org.kde.discover.snap.desktop
+%dir %{_datadir}/kpackage/kcms/kcm_updates
+%dir %{_datadir}/kpackage/kcms/kcm_updates/contents
+%dir %{_datadir}/kpackage/kcms/kcm_updates/contents/ui
+%{_datadir}/kpackage/kcms/kcm_updates/contents/ui/main.qml
+%{_datadir}/kpackage/kcms/kcm_updates/metadata.desktop
+%{_datadir}/kpackage/kcms/kcm_updates/metadata.json
+%{_datadir}/kservices5/kcm_updates.desktop
