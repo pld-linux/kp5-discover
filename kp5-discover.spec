@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.21.3
+%define		kdeplasmaver	5.21.4
 %define		qtver		5.9.0
 %define		kpname		discover
 Summary:	discover
 Name:		kp5-%{kpname}
-Version:	5.21.3
+Version:	5.21.4
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	487884ad758391cfac909af3cdde3d63
+# Source0-md5:	5e47b7079ddf8633c7fa3fe5dc1f5a79
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
 BuildRequires:	Qt5Core-devel >= %{qtver}
