@@ -9,6 +9,7 @@ License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
 # Source0-md5:	5e47b7079ddf8633c7fa3fe5dc1f5a79
+Patch0:		cxx-linkage.patch
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -31,7 +32,9 @@ BuildRequires:	kf5-kdbusaddons-devel
 BuildRequires:	kf5-kdeclarative-devel
 BuildRequires:	kf5-ki18n-devel
 BuildRequires:	kf5-kiconthemes-devel
+BuildRequires:	kf5-kidletime-devel
 BuildRequires:	kf5-kio-devel
+BuildRequires:	kf5-kitemmodels-devel
 BuildRequires:	kf5-kitemviews-devel
 BuildRequires:	kf5-knewstuff-devel
 BuildRequires:	kf5-knotifications-devel
@@ -51,6 +54,7 @@ discover
 
 %prep
 %setup -q -n %{kpname}-%{version}
+%patch0 -p1
 
 %build
 install -d build
