@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.22.5
+%define		kdeplasmaver	5.23.0
 %define		qtver		5.9.0
 %define		kpname		discover
 Summary:	discover
 Name:		kp5-%{kpname}
-Version:	5.22.5
+Version:	5.23.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	a44d1706e5cba9f1f8f3525002b18f31
+# Source0-md5:	e2b8aff203d8d7c746a226c6a2e10eb4
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -85,7 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/22x22/apps/plasmadiscover.png
 %{_iconsdir}/hicolor/32x32/apps/plasmadiscover.png
 %{_iconsdir}/hicolor/48x48/apps/plasmadiscover.png
-%{_iconsdir}/hicolor/scalable/apps/plasmadiscover.svgz
+%{_iconsdir}/hicolor/scalable/apps/plasmadiscover.svg*
 %dir %{_datadir}/kxmlgui5/plasmadiscover
 %{_datadir}/kxmlgui5/plasmadiscover/plasmadiscoverui.rc
 %{_datadir}/metainfo/org.kde.discover.appdata.xml
