@@ -4,7 +4,7 @@
 Summary:	discover
 Name:		kp5-%{kpname}
 Version:	5.23.4
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -27,6 +27,7 @@ BuildRequires:	kf5-karchive-devel
 BuildRequires:	kf5-kconfig-devel
 BuildRequires:	kf5-kconfigwidgets-devel
 BuildRequires:	kf5-kcoreaddons-devel
+BuildRequires:	kf5-kcrash-devel
 BuildRequires:	kf5-kdbusaddons-devel
 BuildRequires:	kf5-kdeclarative-devel
 BuildRequires:	kf5-ki18n-devel
