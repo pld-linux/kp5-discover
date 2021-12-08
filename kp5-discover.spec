@@ -4,7 +4,7 @@
 Summary:	discover
 Name:		kp5-%{kpname}
 Version:	5.23.4
-Release:	2
+Release:	3
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -76,6 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f discover.lang
 %defattr(644,root,root,755)
 %dir %{_libdir}/qt5/plugins/discover
+%dir %{_libdir}/qt5/plugins/discover-notifier
 %attr(755,root,root) %{_libdir}/qt5/plugins/discover/kns-backend.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/discover-notifier/FlatpakNotifier.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/discover/flatpak-backend.so
@@ -112,4 +113,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kpackage/kcms/kcm_updates/metadata.json
 %{_datadir}/kservices5/kcm_updates.desktop
 %dir %{_datadir}/libdiscover
+%dir %{_datadir}/libdiscover/categories
 %{_datadir}/libdiscover/categories/flatpak-backend-categories.xml
