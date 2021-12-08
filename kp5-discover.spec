@@ -77,7 +77,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %dir %{_libdir}/qt5/plugins/discover
 %attr(755,root,root) %{_libdir}/qt5/plugins/discover/kns-backend.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/discover-notifier/FlatpakNotifier.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/discover/flatpak-backend.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/discover/fwupd-backend.so
 %{_desktopdir}/org.kde.discover.desktop
+%{_desktopdir}/org.kde.discover-flatpak.desktop
 %attr(755,root,root) %{_bindir}/plasma-discover
 %{_libdir}/plasma-discover
 %{_desktopdir}/org.kde.discover.urlhandler.desktop
@@ -87,9 +91,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/32x32/apps/plasmadiscover.png
 %{_iconsdir}/hicolor/48x48/apps/plasmadiscover.png
 %{_iconsdir}/hicolor/scalable/apps/plasmadiscover.svg*
+%{_iconsdir}/hicolor/scalable/apps/flatpak-discover.svg
 %dir %{_datadir}/kxmlgui5/plasmadiscover
 %{_datadir}/kxmlgui5/plasmadiscover/plasmadiscoverui.rc
 %{_datadir}/metainfo/org.kde.discover.appdata.xml
+%{_datadir}/metainfo/org.kde.discover.flatpak.appdata.xml
 /etc/xdg/autostart/org.kde.discover.notifier.desktop
 %attr(755,root,root) %{_libexecdir}/DiscoverNotifier
 %{_desktopdir}/org.kde.discover.notifier.desktop
@@ -105,3 +111,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kpackage/kcms/kcm_updates/metadata.desktop
 %{_datadir}/kpackage/kcms/kcm_updates/metadata.json
 %{_datadir}/kservices5/kcm_updates.desktop
+%dir %{_datadir}/libdiscover
+%{_datadir}/libdiscover/categories/flatpak-backend-categories.xml
