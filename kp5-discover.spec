@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.23.5
+%define		kdeplasmaver	5.24.0
 %define		qtver		5.9.0
 %define		kpname		discover
 Summary:	discover
 Name:		kp5-%{kpname}
-Version:	5.23.5
+Version:	5.24.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	8c99b831cf52102612e5fbb8248c80bc
+# Source0-md5:	1759fb71e190f0fd506e98f68d1df938
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -105,15 +105,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/knotifications5/discoverabstractnotifier.notifyrc
 %{_datadir}/qlogging-categories5/discover.categories
 %attr(755,root,root) %{_bindir}/plasma-discover-update
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_updates.so
 %{_desktopdir}/org.kde.discover.snap.desktop
 %dir %{_datadir}/kpackage/kcms/kcm_updates
 %dir %{_datadir}/kpackage/kcms/kcm_updates/contents
 %dir %{_datadir}/kpackage/kcms/kcm_updates/contents/ui
 %{_datadir}/kpackage/kcms/kcm_updates/contents/ui/main.qml
-%{_datadir}/kpackage/kcms/kcm_updates/metadata.desktop
-%{_datadir}/kpackage/kcms/kcm_updates/metadata.json
-%{_datadir}/kservices5/kcm_updates.desktop
 %dir %{_datadir}/libdiscover
 %dir %{_datadir}/libdiscover/categories
 %{_datadir}/libdiscover/categories/flatpak-backend-categories.xml
+%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_updates.so
