@@ -1,15 +1,16 @@
-%define		kdeplasmaver	5.24.1
+%define		kdeplasmaver	5.24.2
 %define		qtver		5.9.0
 %define		kpname		discover
 Summary:	discover
 Name:		kp5-%{kpname}
-Version:	5.24.1
-Release:	1
+Version:	5.24.2
+Release:	0.1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	aacec1eb09914c17efcde7989731d310
+# Source0-md5:	4f9d6a01f8abeb7761c105368e988921
 URL:		http://www.kde.org/
+BuildRequires:	AppStream-qt-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}
@@ -44,6 +45,7 @@ BuildRequires:	kf5-ktextwidgets-devel
 BuildRequires:	kf5-kwallet-devel
 BuildRequires:	kf5-kwidgetsaddons-devel
 BuildRequires:	kf5-solid-devel
+BuildRequires:	libmarkdown-devel
 BuildRequires:	ninja
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
