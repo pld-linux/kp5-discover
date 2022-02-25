@@ -3,12 +3,12 @@
 %define		kpname		discover
 Summary:	discover
 Name:		kp5-%{kpname}
-Version:	5.24.2
-Release:	0.1
+Version:	5.24.2.1
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	4f9d6a01f8abeb7761c105368e988921
+# Source0-md5:	a0e0b28ea379c0768c59f6de191903e2
 URL:		http://www.kde.org/
 BuildRequires:	AppStream-qt-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
