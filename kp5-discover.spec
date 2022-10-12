@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	5.25.5
+%define		kdeplasmaver	5.26.0
 %define		qtver		5.15.2
 %define		kpname		discover
 Summary:	discover
 Name:		kp5-%{kpname}
-Version:	5.25.5
-Release:	2
+Version:	5.26.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	52396ddcdcf31bd2f6a887e8df0539b9
+# Source0-md5:	26e362bfb35d8e802d9c9e64026d8052
 URL:		http://www.kde.org/
 BuildRequires:	AppStream-qt-devel
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
@@ -90,13 +90,8 @@ rm -rf $RPM_BUILD_ROOT
 %files -f discover.lang
 %defattr(644,root,root,755)
 %dir %{_libdir}/qt5/plugins/discover
-%dir %{_libdir}/qt5/plugins/discover-notifier
-%attr(755,root,root) %{_libdir}/qt5/plugins/discover/kns-backend.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/discover-notifier/FlatpakNotifier.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/discover/flatpak-backend.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/discover/fwupd-backend.so
 %{_desktopdir}/org.kde.discover.desktop
-%{_desktopdir}/org.kde.discover-flatpak.desktop
 %attr(755,root,root) %{_bindir}/plasma-discover
 %{_libdir}/plasma-discover
 %{_desktopdir}/org.kde.discover.urlhandler.desktop
@@ -106,11 +101,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/32x32/apps/plasmadiscover.png
 %{_iconsdir}/hicolor/48x48/apps/plasmadiscover.png
 %{_iconsdir}/hicolor/scalable/apps/plasmadiscover.svg*
-%{_iconsdir}/hicolor/scalable/apps/flatpak-discover.svg
 %dir %{_datadir}/kxmlgui5/plasmadiscover
 %{_datadir}/kxmlgui5/plasmadiscover/plasmadiscoverui.rc
 %{_datadir}/metainfo/org.kde.discover.appdata.xml
-%{_datadir}/metainfo/org.kde.discover.flatpak.appdata.xml
 /etc/xdg/autostart/org.kde.discover.notifier.desktop
 %attr(755,root,root) %{_libexecdir}/DiscoverNotifier
 %{_desktopdir}/org.kde.discover.notifier.desktop
@@ -122,8 +115,5 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/kpackage/kcms/kcm_updates/contents
 %dir %{_datadir}/kpackage/kcms/kcm_updates/contents/ui
 %{_datadir}/kpackage/kcms/kcm_updates/contents/ui/main.qml
-%dir %{_datadir}/libdiscover
-%dir %{_datadir}/libdiscover/categories
-%{_datadir}/libdiscover/categories/flatpak-backend-categories.xml
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_updates.so
 %{_desktopdir}/kcm_updates.desktop
