@@ -7,7 +7,7 @@
 Summary:	discover
 Name:		kp5-%{kpname}
 Version:	5.27.0
-Release:	2
+Release:	3
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -82,6 +82,9 @@ ctest
 rm -rf $RPM_BUILD_ROOT
 %ninja_install -C build
 
+# not supported by glibc yet
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/ie
+
 %find_lang discover --all-name --with-kde
 
 %clean
@@ -117,10 +120,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kpackage/kcms/kcm_updates/contents/ui/main.qml
 %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_updates.so
 %{_desktopdir}/kcm_updates.desktop
+%dir %{_libdir}/qt5/plugins/discover-notifier
 %{_libdir}/qt5/plugins/discover-notifier/FlatpakNotifier.so
 %{_libdir}/qt5/plugins/discover/flatpak-backend.so
 %{_libdir}/qt5/plugins/discover/kns-backend.so
 %{_desktopdir}/org.kde.discover-flatpak.desktop
 %{_iconsdir}/hicolor/scalable/apps/flatpak-discover.svg
+%dir %{_datadir}/libdiscover
+%dir %{_datadir}/libdiscover/categories
 %{_datadir}/libdiscover/categories/flatpak-backend-categories.xml
 %{_datadir}/metainfo/org.kde.discover.flatpak.appdata.xml
