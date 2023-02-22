@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	5.27.0
+%define		kdeplasmaver	5.27.1
 %define		qtver		5.15.2
 %define		kpname		discover
 Summary:	discover
 Name:		kp5-%{kpname}
-Version:	5.27.0
-Release:	3
+Version:	5.27.1
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	f00a197bca35bc0bd456d3ebfd30c91b
+# Source0-md5:	3ad69df8522266c99f2defb88101af27
 URL:		http://www.kde.org/
 BuildRequires:	AppStream-qt-devel >= 0.15.3
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
