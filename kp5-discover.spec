@@ -7,7 +7,7 @@
 Summary:	discover
 Name:		kp5-%{kpname}
 Version:	5.27.1
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -23,6 +23,7 @@ BuildRequires:	Qt5Qml-devel >= %{qtver}
 BuildRequires:	Qt5Quick-devel >= %{qtver}
 BuildRequires:	Qt5Svg-devel >= %{qtver}
 BuildRequires:	Qt5Test-devel >= %{qtver}
+BuildRequires:	Qt5WebView-devel >= %{qtver}
 BuildRequires:	Qt5Widgets-devel >= %{qtver}
 BuildRequires:	Qt5Xml-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
