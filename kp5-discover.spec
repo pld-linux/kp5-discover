@@ -48,6 +48,7 @@ BuildRequires:	kf5-knotifications-devel
 BuildRequires:	kf5-ktextwidgets-devel
 BuildRequires:	kf5-kwallet-devel
 BuildRequires:	kf5-kwidgetsaddons-devel
+BuildRequires:	kf5-purpose-devel
 BuildRequires:	kf5-solid-devel
 BuildRequires:	libmarkdown-devel
 BuildRequires:	ninja
