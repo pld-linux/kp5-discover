@@ -7,13 +7,14 @@
 Summary:	discover
 Name:		kp5-%{kpname}
 Version:	5.27.11
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
 # Source0-md5:	91c91a2c8efc546e8fc53f97c8aa5834
 URL:		http://www.kde.org/
 BuildRequires:	AppStream-qt-devel >= 0.15.3
+BuildRequires:	AppStream-qt-devel < 1.0
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}
