@@ -13,8 +13,7 @@ Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
 # Source0-md5:	91c91a2c8efc546e8fc53f97c8aa5834
 URL:		http://www.kde.org/
-BuildRequires:	AppStream-qt-devel >= 0.15.3
-BuildRequires:	AppStream-qt-devel < 1.0
+BuildRequires:	AppStream-qt5-devel >= 1.0.2-2
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}
@@ -32,6 +31,7 @@ BuildRequires:	flatpak-devel
 BuildRequires:	fwupd-devel
 BuildRequires:	kf5-extra-cmake-modules >= 1.4.0
 BuildRequires:	kf5-karchive-devel
+BuildRequires:	kf5-kcmutils-devel
 BuildRequires:	kf5-kconfig-devel
 BuildRequires:	kf5-kconfigwidgets-devel
 BuildRequires:	kf5-kcoreaddons-devel
