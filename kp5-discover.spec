@@ -4,7 +4,8 @@
 %define		kdeplasmaver	5.27.11
 %define		qtver		5.15.2
 %define		kpname		discover
-Summary:	discover
+Summary:	Discover - KDE Software Center
+Summary(pl.UTF-8):	Odkrywca - Ośrodek programów KDE
 Name:		kp5-%{kpname}
 Version:	5.27.11
 Release:	2
@@ -62,7 +63,10 @@ Suggests:	fwupd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-discover
+Discover - KDE Software Center application.
+
+%description -l pl.UTF-8
+Odkrywca - Ośrodek programów KDE.
 
 %prep
 %setup -q -n %{kpname}-%{version}
