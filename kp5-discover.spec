@@ -54,7 +54,7 @@ BuildRequires:	kf5-solid-devel
 BuildRequires:	libmarkdown-devel
 BuildRequires:	ninja
 BuildRequires:	qt5-build >= %{qtver}
-BuildRequires:	rpmbuild(macros) >= 1.164
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Suggests:	flatpak
@@ -73,6 +73,7 @@ discover
 	%{!?with_tests:-DBUILD_TESTING=OFF} \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	-DHTML_INSTALL_DIR=%{_kdedocdir}
+
 %ninja_build -C build
 
 %if %{with tests}
@@ -81,6 +82,7 @@ ctest
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %ninja_install -C build
 
 # not supported by glibc yet
