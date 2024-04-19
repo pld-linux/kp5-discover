@@ -12,7 +12,7 @@ License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
 # Source0-md5:	91c91a2c8efc546e8fc53f97c8aa5834
-URL:		http://www.kde.org/
+URL:		https://kde.org/
 BuildRequires:	AppStream-qt5-devel >= 1.0.2-2
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
 BuildRequires:	Qt5Core-devel >= %{qtver}
