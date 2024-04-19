@@ -2,6 +2,7 @@
 # Conditional build:
 %bcond_with	tests		# build with tests
 %define		kdeplasmaver	5.27.11
+%define		kf_ver		5.102.0
 %define		qtver		5.15.2
 %define		kpname		discover
 Summary:	Discover - KDE Software Center
@@ -15,6 +16,7 @@ Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{vers
 # Source0-md5:	91c91a2c8efc546e8fc53f97c8aa5834
 URL:		https://kde.org/
 BuildRequires:	AppStream-qt5-devel >= 1.0.2-2
+BuildRequires:	PackageKit-qt5-devel >= 1.0.1
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}
@@ -28,34 +30,48 @@ BuildRequires:	Qt5WebView-devel >= %{qtver}
 BuildRequires:	Qt5Widgets-devel >= %{qtver}
 BuildRequires:	Qt5Xml-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
-BuildRequires:	flatpak-devel
-BuildRequires:	fwupd-devel
-BuildRequires:	kf5-extra-cmake-modules >= 1.4.0
-BuildRequires:	kf5-karchive-devel
-BuildRequires:	kf5-kcmutils-devel
-BuildRequires:	kf5-kconfig-devel
+BuildRequires:	flatpak-devel >= 0.11.8
+BuildRequires:	fwupd-devel >= 1.5.0
+BuildRequires:	gettext-tools
+BuildRequires:	kf5-attica-devel >= 5.23
+BuildRequires:	kf5-extra-cmake-modules >= %{kf_ver}
+BuildRequires:	kf5-karchive-devel >= %{kf_ver}
+BuildRequires:	kf5-kcmutils-devel >= %{kf_ver}
+BuildRequires:	kf5-kconfig-devel >= %{kf_ver}
 BuildRequires:	kf5-kconfigwidgets-devel
-BuildRequires:	kf5-kcoreaddons-devel
-BuildRequires:	kf5-kcrash-devel
-BuildRequires:	kf5-kdbusaddons-devel
-BuildRequires:	kf5-kdeclarative-devel
-BuildRequires:	kf5-ki18n-devel
+BuildRequires:	kf5-kcoreaddons-devel >= %{kf_ver}
+BuildRequires:	kf5-kcrash-devel >= %{kf_ver}
+BuildRequires:	kf5-kdbusaddons-devel >= %{kf_ver}
+BuildRequires:	kf5-kdeclarative-devel >= %{kf_ver}
+BuildRequires:	kf5-ki18n-devel >= %{kf_ver}
 BuildRequires:	kf5-kiconthemes-devel
-BuildRequires:	kf5-kidletime-devel
-BuildRequires:	kf5-kio-devel
+BuildRequires:	kf5-kidletime-devel >= %{kf_ver}
+BuildRequires:	kf5-kio-devel >= %{kf_ver}
+BuildRequires:	kf5-kirigami2-devel >= 2.7.0
 BuildRequires:	kf5-kitemmodels-devel
 BuildRequires:	kf5-kitemviews-devel
-BuildRequires:	kf5-knewstuff-devel
-BuildRequires:	kf5-knotifications-devel
+BuildRequires:	kf5-knewstuff-devel >= 5.53
+BuildRequires:	kf5-knotifications-devel >= %{kf_ver}
 BuildRequires:	kf5-ktextwidgets-devel
 BuildRequires:	kf5-kwallet-devel
 BuildRequires:	kf5-kwidgetsaddons-devel
-BuildRequires:	kf5-purpose-devel
+BuildRequires:	kf5-kxmlgui-devel >= %{kf_ver}
+BuildRequires:	kf5-purpose-devel >= %{kf_ver}
 BuildRequires:	kf5-solid-devel
+BuildRequires:	kuserfeedback-devel
 BuildRequires:	libmarkdown-devel
+BuildRequires:	libstdc++-devel >= 6:7
 BuildRequires:	ninja
+BuildRequires:	ostree-devel
+BuildRequires:	pkgconfig
 BuildRequires:	qt5-build >= %{qtver}
+# broken:
+# - requires dbus interface, which is in main package (should be moved to -devel or -libs)
+# - error: `currentDistroComponentId' is not a member of `AppStream::Utils'
+#BuildRequires:	rpm-ostree-devel
 BuildRequires:	rpmbuild(macros) >= 1.736
+# bcond? (disabled by default?)
+#BuildRequires:	snapd-qt5-devel
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Suggests:	flatpak
