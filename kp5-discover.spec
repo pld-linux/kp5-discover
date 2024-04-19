@@ -121,12 +121,12 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/kpackage/kcms/kcm_updates/contents
 %dir %{_datadir}/kpackage/kcms/kcm_updates/contents/ui
 %{_datadir}/kpackage/kcms/kcm_updates/contents/ui/main.qml
-%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_updates.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_updates.so
 %{_desktopdir}/kcm_updates.desktop
 %dir %{_libdir}/qt5/plugins/discover-notifier
-%{_libdir}/qt5/plugins/discover-notifier/FlatpakNotifier.so
-%{_libdir}/qt5/plugins/discover/flatpak-backend.so
-%{_libdir}/qt5/plugins/discover/kns-backend.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/discover-notifier/FlatpakNotifier.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/discover/flatpak-backend.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/discover/kns-backend.so
 %{_desktopdir}/org.kde.discover-flatpak.desktop
 %{_iconsdir}/hicolor/scalable/apps/flatpak-discover.svg
 %dir %{_datadir}/libdiscover
