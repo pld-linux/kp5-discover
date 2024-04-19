@@ -75,8 +75,9 @@ Odkrywca - Ośrodek programów KDE.
 %cmake -B build \
 	-G Ninja \
 	%{!?with_tests:-DBUILD_TESTING=OFF} \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
-	-DHTML_INSTALL_DIR=%{_kdedocdir}
+	-DKDE_INSTALL_DOCBUNDLEDIR=%{_kdedocdir} \
+	-DKDE_INSTALL_SYSCONFDIR=%{_sysconfdir} \
+	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON
 
 %ninja_build -C build
 
