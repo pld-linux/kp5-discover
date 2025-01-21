@@ -1,19 +1,19 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	5.27.11
+%define		kdeplasmaver	5.27.12
 %define		kf_ver		5.102.0
 %define		qtver		5.15.2
 %define		kpname		discover
 Summary:	Discover - KDE Software Center
 Summary(pl.UTF-8):	Odkrywca - Ośrodek programów KDE
 Name:		kp5-%{kpname}
-Version:	5.27.11
-Release:	3
+Version:	5.27.12
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	91c91a2c8efc546e8fc53f97c8aa5834
+# Source0-md5:	0191263c4f417619e81f41a761420c36
 URL:		https://kde.org/
 BuildRequires:	AppStream-qt5-devel >= 1.0.2-2
 BuildRequires:	PackageKit-qt5-devel >= 1.0.1
@@ -146,11 +146,15 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kcm_updates.desktop
 %dir %{_libdir}/qt5/plugins/discover-notifier
 %attr(755,root,root) %{_libdir}/qt5/plugins/discover-notifier/FlatpakNotifier.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/discover-notifier/DiscoverPackageKitNotifier.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/discover/flatpak-backend.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/discover/kns-backend.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/discover/packagekit-backend.so
 %{_desktopdir}/org.kde.discover-flatpak.desktop
 %{_iconsdir}/hicolor/scalable/apps/flatpak-discover.svg
 %dir %{_datadir}/libdiscover
 %dir %{_datadir}/libdiscover/categories
 %{_datadir}/libdiscover/categories/flatpak-backend-categories.xml
+%{_datadir}/libdiscover/categories/packagekit-backend-categories.xml
 %{_datadir}/metainfo/org.kde.discover.flatpak.appdata.xml
+%{_datadir}/metainfo/org.kde.discover.packagekit.appdata.xml
